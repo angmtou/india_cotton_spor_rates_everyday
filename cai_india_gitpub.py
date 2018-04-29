@@ -9,9 +9,6 @@
     data from ： http://www.caionline.in/site/spot_rates
 
 """
-
-
-
 # 印度棉花协会
 import os
 import pandas as pd
@@ -52,23 +49,12 @@ data5['PerCandy']=data5.iloc[:,8].astype(float)
 data5[' Per Candy']=data5[' Per Candy'].astype(float)
 
 
-
-
-
-
-# 调整新插入列sportday的顺序，使得看起来更舒服，习惯
 col1=['No.','sportday','Growth','Grade Standard','Grade','Staple','Micronaire','Strength/ GPT','Per Quintal',' Per Candy','PerCandy']
 # print parms_pd.reindex(columns=col1)
 data5=data5.reindex(columns=col1)
 
-
-
-
-
 col2={'No.':'no','sportday':'sportday','Growth':'growth','Grade Standard':'gradestandard','Grade':'grade','Staple':'staple','Micronaire':'micronaire','Strength/ GPT':'strengthgpt','Per Quintal':'perquintal',' Per Candy':'PerCandy_del','PerCandy':'percandy'}
 data5=data5.rename(columns=col2)
-
-
 
 data5=data5.drop('PerCandy_del',axis=1)
 
